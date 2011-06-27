@@ -8,9 +8,14 @@ describe EPA::Client::RadInfo do
   
   describe ".catalog" do
     
-    it "should return the correct list of databases" do
+    it "should return the correct list of databases when empty" do
       test = @client.catalog()
-      test[0].should == "Regulatory Program"
+      test[0].should == "facility"
+    end
+    
+    it "should return the columns for a given database" do
+      test = @client.catalog("facility")
+      test[0].should == 'CITY_NAME
     end
   end
   
