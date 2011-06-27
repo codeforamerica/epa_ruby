@@ -15,7 +15,20 @@ describe EPA::Client::RadInfo do
     
     it "should return the columns for a given database" do
       test = @client.catalog("facility")
-      test[0].should == 'CITY_NAME
+      test[0].should == 'CITY_NAME'
+    end
+  end
+  
+  describe ".facility" do
+    before do
+      stub_get("rad_facility/CITY_NAME/PASADENA").
+        to_return(:status => 200, :body => fixture("facility.xml"))
+    end
+    
+    it "should return the correct item" do
+      test = @client.facility(:column => 'CITY_NAME', :value => 'PASADENA')
+      a_get("rad_facility/CITY_NAME/PASADENA").should have_been_made
+      test.rad_facility.city_name.should == "PASADENA"
     end
   end
   
