@@ -28,7 +28,7 @@ describe EPA::Client::RadInfo do
     it "should return the correct item" do
       test = @client.facility(:column => 'CITY_NAME', :value => 'PASADENA')
       a_get("rad_facility/CITY_NAME/PASADENA").should have_been_made
-      test.rad_facility.city_name.should == "PASADENA"
+      test.rad_facility_list.rad_facility[0].city_name.should == "PASADENA"
     end
   end
   

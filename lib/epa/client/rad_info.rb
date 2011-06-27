@@ -292,6 +292,10 @@ module EPA
         
       end
       
+      def facility(params={}, options={})
+        EPA.get("rad_facility/#{params[:column]}/#{params[:value]}", options)
+      end
+      
     end
   end
 end

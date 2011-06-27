@@ -8,35 +8,35 @@ require 'rspec'
 require 'webmock/rspec'
 
 def a_delete(path)
-  a_request(:delete, '' + path)
+  a_request(:delete, 'http://iaspub.epa.gov/enviro/efservice/' + path)
 end
 
 def a_get(path)
-  a_request(:get, '' + path)
+  a_request(:get, 'http://iaspub.epa.gov/enviro/efservice/' + path)
 end
 
 def a_post(path)
-  a_request(:post, '' + path)
+  a_request(:post, 'http://iaspub.epa.gov/enviro/efservice/' + path)
 end
 
 def a_put(path)
-  a_request(:put, '' + path)
+  a_request(:put, 'http://iaspub.epa.gov/enviro/efservice/' + path)
 end
 
 def stub_delete(path)
-  stub_request(:delete, '' + path)
+  stub_request(:delete, 'http://iaspub.epa.gov/enviro/efservice/' + path)
 end
 
 def stub_get(path)
-  stub_request(:get, '' + path)
+  stub_request(:get, 'http://iaspub.epa.gov/enviro/efservice/' + path)
 end
 
 def stub_post(path)
-  stub_request(:post, '' + path)
+  stub_request(:post, 'http://iaspub.epa.gov/enviro/efservice/' + path)
 end
 
 def stub_put(path)
-  stub_request(:put, '' + path)
+  stub_request(:put, 'http://iaspub.epa.gov/enviro/efservice/' + path)
 end
 
 def fixture_path
