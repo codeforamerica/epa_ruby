@@ -293,7 +293,11 @@ module EPA
       end
       
       def facility(params={}, options={})
-        EPA.get("rad_facility/#{params[:column]}/#{params[:value]}", options)
+        if !params.has_key?(:column)
+          catalog("facility")
+        else
+          EPA.get("rad_facility/#{params[:column]}/#{params[:value]}", options)
+        end
       end
       
     end
