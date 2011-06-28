@@ -58,4 +58,17 @@ describe EPA::Client::RadInfo do
     end
   end
   
+  describe ".regulation" do
+    before do
+      stub_get("rad_regulation/SUBPART_ID/B").
+        to_return(:status => 200, :body => fixture("regulation.xml"))
+    end
+    
+    it "should return the correct item" do
+      test = @client.regulation(:column => 'SUBPART_ID', :value => 'B')
+      a_get("rad_regulation/SUBPART_ID/B").should have_been_made
+      test.rad_regulation_list.rad_regulation.subpart_id.should == "B"
+    end
+  end
+  
 end

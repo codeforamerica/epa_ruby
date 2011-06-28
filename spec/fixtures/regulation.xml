@@ -1,0 +1,20 @@
+
+<?xml version="1.0"?> 
+<rad_regulationList Count="1" Rows="1-1000" > 
+ <rad_regulation> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <STATUTE>Clean Air Act</STATUTE> 
+  <STAT_ACRONYM>CAA</STAT_ACRONYM> 
+  <TITLE_ID>40</TITLE_ID> 
+  <REG_TITLE>Protection of Environment</REG_TITLE> 
+  <PART_ID>61</PART_ID> 
+  <CFR_PART>National Emission Standards for Hazardous Air Pollutants</CFR_PART> 
+  <SECTION_ID/> 
+  <CRF_SECTION/> 
+  <SUBPART_ID>B</SUBPART_ID> 
+  <CFR_SUBPART>Radon Emissions from Underground Uranium Mines</CFR_SUBPART> 
+  <URL/> 
+  <RAD_CHANGE_DATE/> 
+  <RNUM>1</RNUM> 
+ </rad_regulation> 
+</rad_regulationList>

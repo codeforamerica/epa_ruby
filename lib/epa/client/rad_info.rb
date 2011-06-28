@@ -316,6 +316,14 @@ module EPA
         end
       end
       
+      def regulation(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("regulation")
+        else
+          EPA.get("rad_regulation/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
