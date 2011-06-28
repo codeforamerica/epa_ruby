@@ -300,6 +300,14 @@ module EPA
         end
       end
       
+      def facility_type(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("facility_type")
+        else
+          EPA.get("rad_facility_type/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end

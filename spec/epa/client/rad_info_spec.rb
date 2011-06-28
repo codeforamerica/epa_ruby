@@ -34,14 +34,14 @@ describe EPA::Client::RadInfo do
   
   describe ".facility_type" do
     before do
-      stub_get("rad_facility/CITY_NAME/PASADENA").
+      stub_get("rad_facility_type/SEC_CIT_REF_FLAG/N").
         to_return(:status => 200, :body => fixture("facility_type.xml"))
     end
     
     it "should return the correct item" do
       test = @client.facility_type(:column => 'SEC_CIT_REF_FLAG', :value => 'N')
       a_get("rad_facility_type/SEC_CIT_REF_FLAG/N").should have_been_made
-      test.rad_facility_type_list.rad_facility[0].sub_part_id.should == "B"
+      test.rad_facility_type_list.rad_facility_type[0].subpart_id.should == "B"
     end
   end
   
