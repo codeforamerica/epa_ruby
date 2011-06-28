@@ -45,4 +45,17 @@ describe EPA::Client::RadInfo do
     end
   end
   
+  describe ".geo" do
+    before do
+      stub_get("rad_geo_location/RAD_SYS_ID/RAD200000137").
+        to_return(:status => 200, :body => fixture("geo.xml"))
+    end
+    
+    it "should return the correct item" do
+      test = @client.geo(:column => 'RAD_SYS_ID', :value => 'RAD200000137')
+      a_get("rad_geo_location/RAD_SYS_ID/RAD200000137").should have_been_made
+      test.rad_geo_location_list.rad_geo_location.rad_sys_id.should == "RAD200000137"
+    end
+  end
+  
 end

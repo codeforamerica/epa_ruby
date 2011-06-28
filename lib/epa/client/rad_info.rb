@@ -308,6 +308,14 @@ module EPA
         end
       end
       
+      def geo(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("geo")
+        else
+          EPA.get("rad_geo_location/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
