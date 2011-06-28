@@ -1,0 +1,74 @@
+
+<?xml version="1.0"?> 
+<rad_facility_typeList Count="10" Rows="1-1000" > 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <SUBPART_ID>B</SUBPART_ID> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>NESHAPS/Underground Uranium Mine</FACILITY_TYPE> 
+  <RNUM>1</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <SUBPART_ID>H</SUBPART_ID> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>NESHAPS/DOE RAD Facility (Non-Radon)</FACILITY_TYPE> 
+  <RNUM>2</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <SUBPART_ID>I</SUBPART_ID> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>NESHAPS/Other Federal Facility</FACILITY_TYPE> 
+  <RNUM>3</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <SUBPART_ID>K</SUBPART_ID> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>NESHAPS/Elemental Phosophorus Plant</FACILITY_TYPE> 
+  <RNUM>4</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <SUBPART_ID>Q</SUBPART_ID> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>NESHAPS/DOE Radon</FACILITY_TYPE> 
+  <RNUM>5</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <SUBPART_ID>R</SUBPART_ID> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>NESHAPS/Phosphogypsum Stack</FACILITY_TYPE> 
+  <RNUM>6</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <SUBPART_ID>T</SUBPART_ID> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>NESHAPS/Disposal of Uranium Mill Tailings</FACILITY_TYPE> 
+  <RNUM>7</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR61</CIT_REF_CODE> 
+  <SUBPART_ID>W</SUBPART_ID> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>NESHAPS/Operating Uranium Mill Tailings</FACILITY_TYPE> 
+  <RNUM>8</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR194</CIT_REF_CODE> 
+  <SUBPART_ID/> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>WIPP Facility/Generator Site</FACILITY_TYPE> 
+  <RNUM>9</RNUM> 
+ </rad_facility_type> 
+ <rad_facility_type> 
+  <CIT_REF_CODE>40CFR300</CIT_REF_CODE> 
+  <SUBPART_ID/> 
+  <SEC_CIT_REF_FLAG>N</SEC_CIT_REF_FLAG> 
+  <FACILITY_TYPE>RAD NPL Facility</FACILITY_TYPE> 
+  <RNUM>10</RNUM> 
+ </rad_facility_type> 
+</rad_facility_typeList>
