@@ -71,4 +71,17 @@ describe EPA::Client::RadInfo do
     end
   end
   
+  describe ".regulatory_program" do
+    before do
+      stub_get("rad_regulatory_prog/SUBPART_ID/B").
+        to_return(:status => 200, :body => fixture("rad_reg_prog.xml"))
+    end
+    
+    it "should return the correct item" do
+      test = @client.regulatory_program(:column => 'SUBPART_ID', :value => 'B')
+      a_get("rad_regulatory_prog/SUBPART_ID/B").should have_been_made
+      test.rad_regulatory_prog_list.rad_regulatory_prog[0].subpart_id.should == "B"
+    end
+  end
+  
 end
