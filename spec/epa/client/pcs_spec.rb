@@ -175,4 +175,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".effl_lim" do
+     before do
+        stub_get("pcs_effl_lim/NPDES/AR0020273").
+          to_return(:status => 200, :body => fixture("pcs_effl_lim.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.effl_lim(:column => "NPDES", :value => "AR0020273")
+        a_get("pcs_effl_lim/NPDES/AR0020273").should have_been_made
+        test.pcs_effl_lim_list.pcs_effl_lim[0].npdes.should == 'AR0020273'
+    end
+  end
+  
 end

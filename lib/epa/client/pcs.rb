@@ -412,6 +412,14 @@ module EPA
         end
       end
       
+      def effl_lim(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("EFFL_LIM")
+        else
+          EPA.get("pcs_effl_lim/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
