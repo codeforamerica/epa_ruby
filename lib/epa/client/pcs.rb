@@ -324,6 +324,14 @@ module EPA
         end
       end
       
+      def permit_event(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("PERMIT_EVENT")
+        else
+          EPA.get("pcs_permit_event/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end

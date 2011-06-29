@@ -41,7 +41,7 @@ describe EPA::Client::Pcs do
     it "should return the columns for a given database" do
       test = @client.permit_event(:column => "NPDES", :value => "AKG520535")
       a_get("pcs_permit_event/NPDES/AKG520535").should have_been_made
-      test.pcs_admin_penalty_order_list.should == 'AKG520535'
+      test.pcs_permit_event_list.pcs_permit_event[0].npdes.should == 'AKG520535'
     end
   end
   
