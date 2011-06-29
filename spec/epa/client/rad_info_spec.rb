@@ -48,7 +48,7 @@ describe EPA::Client::RadInfo do
   describe ".geo" do
     before do
       stub_get("rad_geo_location/RAD_SYS_ID/RAD200000137").
-        to_return(:status => 200, :body => fixture("geo.xml"))
+        to_return(:status => 200, :body => fixture("rad_geo.xml"))
     end
     
     it "should return the correct item" do
@@ -61,7 +61,7 @@ describe EPA::Client::RadInfo do
   describe ".regulation" do
     before do
       stub_get("rad_regulation/SUBPART_ID/B").
-        to_return(:status => 200, :body => fixture("regulation.xml"))
+        to_return(:status => 200, :body => fixture("rad_regulation.xml"))
     end
     
     it "should return the correct item" do
