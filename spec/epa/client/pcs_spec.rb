@@ -149,4 +149,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".pretreatment_perf_summary" do
+     before do
+        stub_get("pcs_pretreatment_perf_summary/NPDES/AR0020273").
+          to_return(:status => 200, :body => fixture("pcs_pretreatment_perf_summary.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.pretreatment_perf_summary(:column => "NPDES", :value => "AR0020273")
+        a_get("pcs_pretreatment_perf_summary/NPDES/AR0020273").should have_been_made
+        test.pcs_pretreatment_perf_summary_list.pcs_pretreatment_perf_summary[0].npdes.should == 'AR0020273'
+    end
+  end
+  
 end

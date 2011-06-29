@@ -396,6 +396,14 @@ module EPA
         end
       end
       
+      def pretreatment_perf_summary(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("PRETREATMENT_PREF_SUMMARY")
+        else
+          EPA.get("pcs_pretreatment_perf_summary/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
