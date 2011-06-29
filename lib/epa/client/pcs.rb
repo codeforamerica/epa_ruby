@@ -311,7 +311,7 @@ module EPA
         if database.nil?
           return @@lookup_table.keys
         else
-          return @@lookup_table[database].keys
+          return @@lookup_table[database.upcase].keys
         end
         
       end
@@ -377,6 +377,14 @@ module EPA
           catalog("PCI_AUDIT")
         else
           EPA.get("pcs_pci_audit/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
+      def effl_lim_qty(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("EFFL_LIM_QTY")
+        else
+          EPA.get("pcs_effl_lim_qty/#{params[:column]}/#{params[:value]}", options)
         end
       end
       
