@@ -168,7 +168,7 @@ module EPA
           "QTY_AVG_LIMIT"=> "The numeric value of the quantity average for the associated parameter as entered by the user.", 
           "QTY_UNIT_CODE"=> "Code representing the unit of measure applicable to quantity limits and measurements as entered by the user."
         }, 
-        "PCS_CMPL_SCHD_VIOL"=> {
+        "CMPL_SCHD_VIOL"=> {
           "CMPL_SCHD_VIOL_CODE"=> "Violation code describing both automatic and manually detected compliance schedule violations.", 
           "CMPL_SCHD_VIOL_DATE"=> "The actual date of the compliance schedule violation. Ii is usually equal to CMPL_SCHD_EVT_SCHD_DATE.", 
           "NPDES"=> "A National Pollutant Discharge Elimination System (NPDES) code used to uniquely identify a permitted NPDES facility.", 
@@ -385,6 +385,14 @@ module EPA
           catalog("EFFL_LIM_QTY")
         else
           EPA.get("pcs_effl_lim_qty/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
+      def cmpl_schd_viol(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("CMPL_SCHD_VIOL")
+        else
+          EPA.get("pcs_cmpl_schd_viol/#{params[:column]}/#{params[:value]}", options)
         end
       end
       
