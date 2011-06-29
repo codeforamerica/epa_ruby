@@ -356,6 +356,14 @@ module EPA
         end
       end
       
+      def enfor_action(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("ENFOR_ACTION")
+        else
+          EPA.get("pcs_enfor_action/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end

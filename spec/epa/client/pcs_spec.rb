@@ -84,4 +84,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".enfor_action" do
+     before do
+        stub_get("pcs_enfor_action/NPDES/AR0020273").
+          to_return(:status => 200, :body => fixture("pcs_enfor_action.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.enfor_action(:column => "NPDES", :value => "AR0020273")
+        a_get("pcs_enfor_action/NPDES/AR0020273").should have_been_made
+        test.pcs_enfor_action_list.pcs_enfor_action[0].npdes.should == 'AR0020273'
+    end
+  end
+  
 end
