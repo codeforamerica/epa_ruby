@@ -110,4 +110,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".pci_audit" do
+     before do
+        stub_get("pcs_pci_audit/NPDES/AR0020273").
+          to_return(:status => 200, :body => fixture("pcs_pci_audit.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.pci_audit(:column => "NPDES", :value => "AR0020273")
+        a_get("pcs_pci_audit/NPDES/AR0020273").should have_been_made
+        test.pcs_pci_audit_list.pcs_pci_audit[0].npdes.should == 'AR0020273'
+    end
+  end
+  
 end

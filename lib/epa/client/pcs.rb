@@ -372,6 +372,14 @@ module EPA
         end
       end
       
+      def pci_audit(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("PCI_AUDIT")
+        else
+          EPA.get("pcs_pci_audit/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
