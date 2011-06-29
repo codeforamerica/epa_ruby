@@ -58,4 +58,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".dmr_measurement" do
+     before do
+        stub_get("pcs_dmr_measurement/NPDES/ALG120113").
+          to_return(:status => 200, :body => fixture("pcs_dmr_measurement.xml"))
+      end
+
+      it "should return the columns for a given database" do
+        test = @client.dmr_measurement(:column => "NPDES", :value => "ALG120113")
+        a_get("pcs_dmr_measurement/NPDES/ALG120113").should have_been_made
+        test.pcs_dmr_measurement_list.pcs_dmr_measurement[0].npdes.should == 'ALG120113'
+      end
+    end
+  
 end

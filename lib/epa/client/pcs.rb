@@ -340,6 +340,14 @@ module EPA
         end
       end
       
+      def dmr_measurement(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("DMR_MEASUREMENT")
+        else
+          EPA.get("pcs_dmr_measurement/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
