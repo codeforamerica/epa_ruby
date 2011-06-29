@@ -1,0 +1,10 @@
+
+<?xml version="1.0"?> 
+<pcs_code_descList Count="1" Rows="1-1000" > 
+ <pcs_code_desc> 
+  <TABLE_ID>000</TABLE_ID> 
+  <CODE>110</CODE> 
+  <DESCRIPT>PERMIT TRACKING EVENT CODES                       005030UYPTEV</DESCRIPT> 
+  <RNUM>1</RNUM> 
+ </pcs_code_desc> 
+</pcs_code_descList>

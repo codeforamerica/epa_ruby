@@ -404,6 +404,14 @@ module EPA
         end
       end
       
+      def code_desc(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("CODE_DESC")
+        else
+          EPA.get("pcs_code_desc/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
