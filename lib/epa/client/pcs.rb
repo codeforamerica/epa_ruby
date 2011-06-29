@@ -348,6 +348,14 @@ module EPA
         end
       end
       
+      def inspection(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("INSPECTION")
+        else
+          EPA.get("pcs_inspection/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end

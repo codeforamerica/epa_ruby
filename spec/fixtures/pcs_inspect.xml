@@ -1,0 +1,11 @@
+
+<?xml version="1.0"?> 
+<pcs_inspectionList Count="1" Rows="1-1000" > 
+ <pcs_inspection> 
+  <NPDES>AKG520535</NPDES> 
+  <INSP_DATE>30-JUL-03</INSP_DATE> 
+  <INSP_TYPE>C</INSP_TYPE> 
+  <INSP_CODE>R</INSP_CODE> 
+  <RNUM>1</RNUM> 
+ </pcs_inspection> 
+</pcs_inspectionList>
