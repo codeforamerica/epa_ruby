@@ -97,4 +97,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".permit_facility" do
+     before do
+        stub_get("pcs_permit_facility/NPDES/AR0020273").
+          to_return(:status => 200, :body => fixture("pcs_permit_facility.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.permit_facility(:column => "NPDES", :value => "AR0020273")
+        a_get("pcs_permit_facility/NPDES/AR0020273").should have_been_made
+        test.pcs_permit_facility_list.pcs_permit_facility.npdes.should == 'AR0020273'
+    end
+  end
+  
 end

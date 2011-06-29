@@ -364,6 +364,14 @@ module EPA
         end
       end
       
+      def permit_facility(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("PERMIT_FACILITY")
+        else
+          EPA.get("pcs_permit_facility/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
