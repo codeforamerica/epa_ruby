@@ -332,6 +332,14 @@ module EPA
         end
       end
       
+      def pipe_sched_lat_long(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("PIPE_SCHED_LAT_LONG")
+        else
+          EPA.get("pcs_pipe_sched_lat_long/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end

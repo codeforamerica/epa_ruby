@@ -45,4 +45,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".pipe_sched_lat_long" do
+    before do
+      stub_get("pcs_pipe_sched_lat_long/NPDES/ALG120113").
+        to_return(:status => 200, :body => fixture("pcs_pipe_sched_lat_long.xml"))
+    end
+    
+    it "should return the columns for a given database" do
+      test = @client.pipe_sched_lat_long(:column => "NPDES", :value => "ALG120113")
+      a_get("pcs_pipe_sched_lat_long/NPDES/ALG120113").should have_been_made
+      test.pcs_pipe_sched_lat_long_list.pcs_pipe_sched_lat_long[0].npdes.should == 'ALG120113'
+    end
+  end
+  
 end
