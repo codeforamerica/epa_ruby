@@ -420,6 +420,14 @@ module EPA
         end
       end
       
+      def effl_lim_concentr(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("EFFL_LIM_CONCENTR")
+        else
+          EPA.get("pcs_effl_lim_concentr/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
