@@ -436,6 +436,14 @@ module EPA
         end
       end
       
+      def sludge(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("SLUDGE")
+        else
+          EPA.get("pcs_sludge/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end

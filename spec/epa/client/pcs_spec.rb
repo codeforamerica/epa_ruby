@@ -214,4 +214,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".sludge" do
+     before do
+        stub_get("pcs_sludge/HANDLER_STATE/KY").
+          to_return(:status => 200, :body => fixture("pcs_sludge.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.sludge(:column => "HANDLER_STATE", :value => "KY")
+        a_get("pcs_sludge/HANDLER_STATE/KY").should have_been_made
+        test.pcs_sludge_list.pcs_sludge[0].handler_state.should == 'KY'
+    end
+  end
+  
 end
