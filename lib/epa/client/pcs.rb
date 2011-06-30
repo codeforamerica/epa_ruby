@@ -460,6 +460,14 @@ module EPA
         end
       end
       
+      def industrial_user_info(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("INDUSTRIAL_USER_INFO")
+        else
+          EPA.get("pcs_industrial_user_info/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end

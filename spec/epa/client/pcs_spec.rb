@@ -252,4 +252,18 @@ describe EPA::Client::Pcs do
         test.pcs_evidentiary_hearing_event_list.pcs_evidentiary_hearing_event[0].npdes.should == 'MA0101681'
     end
   end
+  
+  describe ".industrial_user_info" do
+     before do
+        stub_get("pcs_industrial_user_info/NPDES/MA0101681").
+          to_return(:status => 200, :body => fixture("pcs_industrial_user_info.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.industrial_user_info(:column => "NPDES", :value => "MA0101681")
+        a_get("pcs_industrial_user_info/NPDES/MA0101681").should have_been_made
+        test.pcs_industrial_user_info_list.pcs_industrial_user_info[0].npdes.should == 'MA0101681'
+    end
+  end
+  
 end
