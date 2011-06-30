@@ -428,6 +428,14 @@ module EPA
         end
       end
       
+      def single_event_viol(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("SINGLE_EVENT_VIOL")
+        else
+          EPA.get("pcs_single_event_viol/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end

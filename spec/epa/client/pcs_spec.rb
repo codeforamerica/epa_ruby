@@ -201,4 +201,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".single_event_viol" do
+     before do
+        stub_get("pcs_single_event_viol/NPDES/AR0020273").
+          to_return(:status => 200, :body => fixture("pcs_single_event_viol.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.single_event_viol(:column => "NPDES", :value => "AR0020273")
+        a_get("pcs_single_event_viol/NPDES/AR0020273").should have_been_made
+        test.pcs_single_event_viol_list.pcs_single_event_viol[0].npdes.should == 'AR0020273'
+    end
+  end
+  
 end
