@@ -266,4 +266,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".cmpl_schd" do
+     before do
+        stub_get("pcs_cmpl_schd/NPDES/MA0101681").
+          to_return(:status => 200, :body => fixture("pcs_cmpl_sched.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.cmpl_schd(:column => "NPDES", :value => "MA0101681")
+        a_get("pcs_cmpl_schd/NPDES/MA0101681").should have_been_made
+        test.pcs_cmpl_schd_list.pcs_cmpl_schd[0].npdes.should == 'MA0101681'
+    end
+  end
+  
 end

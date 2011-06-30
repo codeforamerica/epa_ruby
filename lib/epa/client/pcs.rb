@@ -468,6 +468,14 @@ module EPA
         end
       end
       
+      def cmpl_schd(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("CMPL_SCHD")
+        else
+          EPA.get("pcs_cmpl_schd/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
