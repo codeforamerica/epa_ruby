@@ -240,4 +240,16 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".evidentiary_hearing_event" do
+     before do
+        stub_get("pcs_evidentiary_hearing_event/EVENT_CODE/02099").
+          to_return(:status => 200, :body => fixture("pcs_evidentiary_hearing_event.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.evidentiary_hearing_event(:column => "EVENT_CODE", :value => "02099")
+        a_get("pcs_evidentiary_hearing_event/EVENT_CODE/02099").should have_been_made
+        test.pcs_evidentiary_hearing_event_list.pcs_evidentiary_hearing_event[0].npdes.should == 'MA0101681'
+    end
+  end
 end
