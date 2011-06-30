@@ -227,4 +227,17 @@ describe EPA::Client::Pcs do
     end
   end
   
+  describe ".pipe_sched" do
+     before do
+        stub_get("pcs_pipe_sched/NPDES/AR0020273").
+          to_return(:status => 200, :body => fixture("pcs_pipe_sched.xml"))
+    end
+
+    it "should return the columns for a given database" do
+        test = @client.pipe_sched(:column => "NPDES", :value => "AR0020273")
+        a_get("pcs_pipe_sched/NPDES/AR0020273").should have_been_made
+        test.pcs_pipe_sched_list.pcs_pipe_sched[0].npdes.should == 'AR0020273'
+    end
+  end
+  
 end

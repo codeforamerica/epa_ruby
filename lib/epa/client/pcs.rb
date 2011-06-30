@@ -444,6 +444,14 @@ module EPA
         end
       end
       
+      def pipe_sched(params={}, options={})
+        if !params.has_key?(:column)
+          catalog("PIPE_SCHED")
+        else
+          EPA.get("pcs_pipe_sched/#{params[:column]}/#{params[:value]}", options)
+        end
+      end
+      
     end
   end
 end
