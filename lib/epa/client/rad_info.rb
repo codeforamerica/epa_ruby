@@ -283,6 +283,13 @@ module EPA
                    environmental regulation with oversight of the facility.'),
           },
       }
+      
+      # Returns a list of valid tables or columns in a given table
+      # @param database [String] optional table to lookup
+      # @return {Array}
+      # @example
+      #   catalog()
+      
       def catalog(database=nil)
         if database.nil?
           return @@lookup_table.keys
@@ -292,6 +299,14 @@ module EPA
         
       end
       
+      # Used to lookup data in the facility table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=rad_facility&p_topic=radinfo
+      # @example
+      #   facility({:column => 'CITY_NAME', :value => 'PASADENA'})
+      
       def facility(params={}, options={})
         if !params.has_key?(:column)
           catalog("facility")
@@ -299,6 +314,14 @@ module EPA
           EPA.get("rad_facility/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the facility type table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=rad_facility_type&p_topic=radinfo
+      # @example
+      #   facility_type(:column => 'SEC_CIT_REF_FLAG', :value => 'N')
       
       def facility_type(params={}, options={})
         if !params.has_key?(:column)
@@ -308,6 +331,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the geo location table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=rad_geo_location&p_topic=radinfo
+      # @example
+      #   geo(:column => 'RAD_SYS_ID', :value => 'RAD200000137')
+      
       def geo(params={}, options={})
         if !params.has_key?(:column)
           catalog("geo")
@@ -316,6 +347,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the regulation table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=rad_regulation&p_topic=radinfo
+      # @example
+      #   regulation(:column => 'SUBPART_ID', :value => 'B')
+      
       def regulation(params={}, options={})
         if !params.has_key?(:column)
           catalog("regulation")
@@ -323,6 +362,14 @@ module EPA
           EPA.get("rad_regulation/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the regulatory program table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=rad_regulatory_prog&p_topic=radinfo
+      # @example
+      #   regulatory_program(:column => 'SUBPART_ID', :value => 'B')
       
       def regulatory_program(params={}, options={})
         if !params.has_key?(:column)
