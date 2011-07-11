@@ -307,6 +307,12 @@ module EPA
         }
       }
       
+      # Returns a list of valid tables or columns in a given table
+      # @param database [String] optional table to lookup
+      # @return {Array}
+      # @example
+      #   catalog()
+      
       def catalog(database=nil)
         if database.nil?
           return @@lookup_table.keys
@@ -316,6 +322,14 @@ module EPA
         
       end
       
+      # Used to lookup data in the admin penalty order table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=pcs_admin_penalty_order&p_topic=pcs
+      # @example
+      #   admin_penalty_order({:column => "NPDES", :value => "AKG520535"})
+      
       def admin_penalty_order(params={}, options={})
         if !params.has_key?(:column)
           catalog("ADMIN_PENALTY_ORDER")
@@ -323,6 +337,14 @@ module EPA
           EPA.get("PCS_ADMIN_PENALTY_ORDER/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the permit event table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=pcs_permit_event&p_topic=pcs
+      # @example
+      #   permit_event({:column => "NPDES", :value => "AKG520535"})
       
       def permit_event(params={}, options={})
         if !params.has_key?(:column)
@@ -332,6 +354,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the pipe schedule lat long table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=pcs_pipe_sched_lat_long&p_topic=pcs
+      # @example
+      #   pipe_sched_lat_long({:column => "NPDES", :value => "AKG520535"})
+      
       def pipe_sched_lat_long(params={}, options={})
         if !params.has_key?(:column)
           catalog("PIPE_SCHED_LAT_LONG")
@@ -339,6 +369,14 @@ module EPA
           EPA.get("pcs_pipe_sched_lat_long/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the dmr measurement table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_DMR_MEASUREMENT&p_topic=PCS
+      # @example
+      #   dmr_measurement({:column => "NPDES", :value => "AKG520535"})
       
       def dmr_measurement(params={}, options={})
         if !params.has_key?(:column)
@@ -348,6 +386,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the inspection table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_INSPECTION&p_topic=PCS
+      # @example
+      #   inspection({:column => "NPDES", :value => "AKG520535"})
+      
       def inspection(params={}, options={})
         if !params.has_key?(:column)
           catalog("INSPECTION")
@@ -355,6 +401,14 @@ module EPA
           EPA.get("pcs_inspection/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the enforcement action table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_ENFOR_ACTION&p_topic=PCS
+      # @example
+      #   enfor_action({:column => "NPDES", :value => "AKG520535"})
       
       def enfor_action(params={}, options={})
         if !params.has_key?(:column)
@@ -364,6 +418,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the permit facility table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_PERMIT_FACILITY&p_topic=PCS
+      # @example
+      #   permit_facility({:column => "NPDES", :value => "AKG520535"})
+      
       def permit_facility(params={}, options={})
         if !params.has_key?(:column)
           catalog("PERMIT_FACILITY")
@@ -371,6 +433,14 @@ module EPA
           EPA.get("pcs_permit_facility/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the pci audit table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_PCI_AUDIT&p_topic=PCS
+      # @example
+      #   pci_audit({:column => "NPDES", :value => "AKG520535"})
       
       def pci_audit(params={}, options={})
         if !params.has_key?(:column)
@@ -380,6 +450,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the effl lim qty table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_EFFL_LIM_QTY&p_topic=PCS
+      # @example
+      #   effl_lim_qty({:column => "NPDES", :value => "AKG520535"})
+      
       def effl_lim_qty(params={}, options={})
         if !params.has_key?(:column)
           catalog("EFFL_LIM_QTY")
@@ -387,6 +465,14 @@ module EPA
           EPA.get("pcs_effl_lim_qty/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the cmpl schd viol table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_CMPL_SCHD_VIOL&p_topic=PCS
+      # @example
+      #   cmpl_schd_viol({:column => "NPDES", :value => "AKG520535"})
       
       def cmpl_schd_viol(params={}, options={})
         if !params.has_key?(:column)
@@ -396,6 +482,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the pretreatment perf summary table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_PRETREATMENT_PERF_SUMMARY&p_topic=PCS
+      # @example
+      #   pretreatment_perf_summary({:column => "NPDES", :value => "AKG520535"})
+      
       def pretreatment_perf_summary(params={}, options={})
         if !params.has_key?(:column)
           catalog("PRETREATMENT_PREF_SUMMARY")
@@ -403,6 +497,14 @@ module EPA
           EPA.get("pcs_pretreatment_perf_summary/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the code description table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://iaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=pcs_code_desc&p_topic=pcs
+      # @example
+      #   code_desc({:column => "CODE", :value => "110"})
       
       def code_desc(params={}, options={})
         if !params.has_key?(:column)
@@ -412,6 +514,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the effl lim table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_EFFL_LIM&p_topic=PCS
+      # @example
+      #   effl_lim({:column => "NPDES", :value => "AKG520535"})
+      
       def effl_lim(params={}, options={})
         if !params.has_key?(:column)
           catalog("EFFL_LIM")
@@ -419,6 +529,14 @@ module EPA
           EPA.get("pcs_effl_lim/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the effl lim concentr table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_EFFL_LIM_CONCENTR&p_topic=PCS
+      # @example
+      #   effl_lim_concentr({:column => "NPDES", :value => "AKG520535"})
       
       def effl_lim_concentr(params={}, options={})
         if !params.has_key?(:column)
@@ -428,6 +546,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the single event violation table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_SINGLE_EVENT_VIOL&p_topic=PCS
+      # @example
+      #   single_event_viol({:column => "NPDES", :value => "AKG520535"})
+      
       def single_event_viol(params={}, options={})
         if !params.has_key?(:column)
           catalog("SINGLE_EVENT_VIOL")
@@ -435,6 +561,14 @@ module EPA
           EPA.get("pcs_single_event_viol/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the sludge table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_SLUDGE&p_topic=PCS
+      # @example
+      #   sludge({:column => "NPDES", :value => "AKG520535"})
       
       def sludge(params={}, options={})
         if !params.has_key?(:column)
@@ -444,6 +578,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the pipe schedul table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_PIPE_SCHED&p_topic=PCS
+      # @example
+      #   pipe_sched({:column => "NPDES", :value => "AKG520535"})
+      
       def pipe_sched(params={}, options={})
         if !params.has_key?(:column)
           catalog("PIPE_SCHED")
@@ -451,6 +593,14 @@ module EPA
           EPA.get("pcs_pipe_sched/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the evidentiary hearing event table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_EVIDENTIARY_HEARING_EVENT&p_topic=PCS
+      # @example
+      #   evidentiary_hearing_event({:column => "NPDES", :value => "AKG520535"})
       
       def evidentiary_hearing_event(params={}, options={})
         if !params.has_key?(:column)
@@ -460,6 +610,14 @@ module EPA
         end
       end
       
+      # Used to lookup data in the industrial user info table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_INDUSTRIAL_USER_INFO&p_topic=PCS
+      # @example
+      #   industrial_user_info({:column => "NPDES", :value => "AKG520535"})
+      
       def industrial_user_info(params={}, options={})
         if !params.has_key?(:column)
           catalog("INDUSTRIAL_USER_INFO")
@@ -467,6 +625,14 @@ module EPA
           EPA.get("pcs_industrial_user_info/#{params[:column]}/#{params[:value]}", options)
         end
       end
+      
+      # Used to lookup data in the cmpl schd table
+      # @param params [Hash] The parameters for the lookup
+      # @param options [Hash] A customizable set of options. 
+      # @return {Hash}
+      # @see http://oaspub.epa.gov/enviro/ef_metadata_html.ef_metadata_table?p_table_name=PCS_CMPL_SCHD&p_topic=PCS
+      # @example
+      #   cmpl_schd({:column => "NPDES", :value => "AKG520535"})
       
       def cmpl_schd(params={}, options={})
         if !params.has_key?(:column)
