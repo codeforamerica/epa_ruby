@@ -1,6 +1,6 @@
 # EPA EnviroFacts Ruby Wrapper
 
-A thin wrapper for the EPA EnviroFacts API
+A thin wrapper for the EPA EnviroFacts [API](http://www.epa.gov/enviro/facts/ef_restful.html)
 
 Currently only RadInfo and PCS data supported
 
