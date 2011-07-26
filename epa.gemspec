@@ -4,8 +4,8 @@ require File.expand_path('../lib/epa/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name        = 'epa'
   gem.version     = EPA::VERSION
-  gem.author      = "Code for America"
-  gem.email       = 'info@codeforamerica.org'
+  gem.author      = "blakeshall"
+  gem.email       = 'blake@codeforamerica.org'
   gem.homepage    = ''
   gem.summary     = %q{TODO: Write a gem summary}
   gem.description = %q{TODO: Write a gem description}
