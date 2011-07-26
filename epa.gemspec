@@ -7,8 +7,8 @@ Gem::Specification.new do |gem|
   gem.author      = "blakeshall"
   gem.email       = 'blake@codeforamerica.org'
   gem.homepage    = ''
-  gem.summary     = %q{TODO: Write a gem summary}
-  gem.description = %q{TODO: Write a gem description}
+  gem.summary     = %q{A Ruby wrapper for the EPA envirofacts api}
+  gem.description = %q{Currently only supports PCS and RADSInfo databases}
 
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
