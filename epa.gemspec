@@ -2,7 +2,7 @@
 require File.expand_path('../lib/epa/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name        = 'epa'
+  gem.name        = 'EPA_envirofacts'
   gem.version     = EPA::VERSION
   gem.author      = "blakeshall"
   gem.email       = 'blake@codeforamerica.org'
