@@ -4,6 +4,16 @@ A thin wrapper for the EPA EnviroFacts [API](http://www.epa.gov/enviro/facts/ef_
 
 Currently only RadInfo and PCS data supported
 
+Continuous Integration
+----------------------
+[![Build Status](https://secure.travis-ci.org/codeforamerica/epa_ruby.png)](http://travis-ci.org/codeforamerica/epa_ruby)
+
+
+Does your project or organization use this gem?
+------------------------------------------
+Add it to the [apps](http://github.com/codeforamerica/epa_ruby/wiki/apps) wiki!
+
+
 Installation
 ------------
     gem install epa
@@ -15,10 +25,10 @@ Usage Examples
 
     # List all the tables in the RadInfo database
     EPA::Client::RadInfo.new.catalog()
-		
+
 		# Get radiation facilities in Pasadena
 		EPA::Client::RadInfo.new.facility(:column => 'CITY_NAME', :value => 'PASADENA')
-		
+
 		# List all the tables in the PCS database
 	  EPA::Client::Pcs.new.catalog()
 
